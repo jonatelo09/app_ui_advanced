@@ -17,6 +17,7 @@ class LoginForm extends StatelessWidget {
         width: 330,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             InputTextLogin(
               iconPath: 'assets/login/icon-email.svg',
@@ -91,7 +92,6 @@ class LoginForm extends StatelessWidget {
                 )
               ],
             ),
-            
           ],
         ),
       ),
