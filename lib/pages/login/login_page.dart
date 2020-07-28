@@ -2,10 +2,12 @@ import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_ui_avanzado/pages/login/widgets/login_form.dart';
+import 'package:flutter_ui_avanzado/pages/login/widgets/register_form.dart';
 import 'package:flutter_ui_avanzado/pages/login/widgets/welcome.dart';
 import 'package:flutter_ui_avanzado/utils/responsive.dart';
 
 class LoginPage extends StatefulWidget {
+  static final routeName = 'login';
   LoginPage({Key key}) : super(key: key);
 
   @override
@@ -50,7 +52,13 @@ class _LoginPageState extends State<LoginPage> with AfterLayoutMixin {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Welcome(),
-                        LoginForm(),
+                        Expanded(
+                          child: PageView(
+                          children: <Widget>[
+                            LoginForm(),
+                            RegisterForm(),
+                          ],
+                        )),
                       ],
                     ),
                   ),
